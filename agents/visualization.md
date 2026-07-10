@@ -24,6 +24,10 @@ Report layout, visual selection, interactions, theming, accessibility, storytell
 ## Inputs
 - `requirements.md`, available measures from the DAX Engineer, `shared/design_system.md`,
   `shared/visual_guidelines.md`, `templates/wireframe.md`.
+- **Knowledge references:** `knowledge/ux.md`, `knowledge/report-storytelling.md`,
+  `knowledge/accessibility.md`. **Technology choice** for each element is governed by
+  `shared/tech_selection.md`; non-native builds are handed to the visual sub-specialists
+  (deneb / svg-figma / html / synoptic) via the Orchestrator.
 
 ## Outputs
 - `projects/<name>/wireframe.md` (stage 6, approved before stage 7).

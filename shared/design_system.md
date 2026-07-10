@@ -4,6 +4,8 @@
 > The system-wide default look. A project may override tokens in its own copy, logged in
 > `decision_log.md`. `visual_guidelines.md` covers *how to choose and build* visuals; this
 > file defines *the tokens* (color, type, spacing).
+> **Deep reference:** `knowledge/figma.md` (design tokens/components → theme.json workflow) and
+> `knowledge/accessibility.md` (contrast targets). Custom visuals must honor these tokens too.
 
 ## Design tokens
 

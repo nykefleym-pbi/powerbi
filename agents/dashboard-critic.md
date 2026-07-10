@@ -25,6 +25,8 @@ Applied at wireframe stage (early) and again on the finished report (late).
 ## Inputs
 - The wireframe (early) and the finished report + `requirements.md`, `business_rules.md`,
   `assumptions.md`, `visual_guidelines.md`.
+- **Knowledge references:** `knowledge/ux.md` and `knowledge/report-storytelling.md` (to challenge
+  vanity metrics, weak narrative, and gratuitous custom visuals against modern best practice).
 
 ## Outputs
 - `projects/<name>/critique.md`: a list of challenges, each with rationale, severity

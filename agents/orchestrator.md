@@ -14,6 +14,9 @@ and deciding when the work is done — while keeping context lean and state auth
 - Scaffold the project folder from `templates/` at kickoff.
 - Decompose work into the 13-stage pipeline; assign one stage to one specialist at a time.
 - Write focused task briefs (see Communication protocol) — minimal context, clear output target.
+- **Select the implementation technology** for each report element at Stage 6 (after wireframe
+  approval, before build) using the `select-visual-tech` skill + `shared/tech_selection.md`, and
+  record the reasoning in `tech_decision.md`. This routes work to the right builder.
 - Review every deliverable against acceptance criteria and `shared/` standards before advancing.
 - Maintain `projects/<name>/project_state.md` (the single source of truth) and rolling handoff summaries.
 - Record cross-cutting decisions in `decision_log.md`; surface high-impact assumptions to the user.
@@ -40,6 +43,18 @@ and deciding when the work is done — while keeping context lean and state auth
 - `decision_log.md` entries for decisions it adjudicates.
 - `release_notes.md` at the end.
 - Clear go/no-go decisions at each gate.
+
+## Technology selection (Stage 6, before any build)
+After the wireframe is approved, run the `select-visual-tech` skill: for each element choose the
+cheapest technology that answers the question — **native visual → custom theme → dynamic SVG →
+HTML Content → Deneb → Synoptic Panel**, plus **calculation groups** at the model layer — per
+`shared/tech_selection.md`. Record every non-native choice, its rationale, cost/risk, and owner in
+`tech_decision.md` (and material choices in `decision_log.md`). Then route each element to its
+builder: native/theme → visualization; SVG → svg-figma-designer; HTML → html-visual-specialist;
+Deneb → deneb-specialist; Synoptic → synoptic-panel-specialist; calc groups → dax-engineer.
+On-demand advisors: **fabric-engineer** (storage mode / deployment / Fabric) and
+**accessibility-specialist** (a11y audit feeding QA). The **knowledge-curator** works outside
+projects and never touches implementation.
 
 ## Decision rules
 - **One stage, one owner, one deliverable** — don't fan work to an agent that isn't next.

@@ -27,6 +27,8 @@ The "what" and "why" of the dashboard. Requirements, KPI definitions, storytelli
 - The project brief from the Orchestrator.
 - `shared/business_rules.md`, `shared/visual_guidelines.md` (for feasible storytelling).
 - `templates/dashboard_requirements.md`.
+- **Knowledge references:** `knowledge/report-storytelling.md` (decision-first KPIs, narrative arc)
+  and `knowledge/ux.md` (what makes a dashboard decision-useful).
 
 ## Outputs
 - `projects/<name>/requirements.md` (from the template).

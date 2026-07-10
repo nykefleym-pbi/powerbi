@@ -23,6 +23,8 @@ Performance analysis and recommendations across model, DAX, Power Query, and rep
 ## Inputs
 - The built model + report, `shared/performance_guidelines.md`, `data_model.md`,
   measure definitions, Power Query folding notes.
+- **Knowledge references:** `knowledge/performance.md` (SE vs FE engine, VertiPaq compression,
+  diagnosis workflow), `knowledge/dax-best-practices.md`, `knowledge/fabric.md` (storage modes).
 
 ## Outputs
 - `projects/<name>/performance_report.md` (findings → impact → recommendation → owner → status).

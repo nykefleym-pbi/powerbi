@@ -2,6 +2,8 @@
 
 > **Owner:** Performance Optimizer · **Readers:** all engineering agents, QA
 > Targets below are portfolio defaults; the Orchestrator may adjust per project and log it.
+> **Deep reference:** `knowledge/performance.md` (SE vs FE engine internals, VertiPaq
+> compression, diagnosis workflow) and `knowledge/fabric.md` (storage modes, Direct Lake).
 
 ## Performance budget (defaults)
 

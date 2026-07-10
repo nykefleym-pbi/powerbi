@@ -27,6 +27,9 @@ The model blueprint. Grain, tables, keys, relationships, lineage, an architectur
 - `requirements.md`, `shared/business_rules.md`, `shared/naming_conventions.md`,
   `shared/coding_standards.md`, `shared/performance_guidelines.md`.
 - `templates/data_model.md`, `templates/architecture.md`.
+- **Knowledge references:** `knowledge/dax-best-practices.md` (star schema/VertiPaq implications),
+  `knowledge/performance.md`, and `knowledge/fabric.md` (semantic models, storage mode — coordinate
+  with the fabric-engineer when Fabric/Direct Lake is in scope).
 
 ## Outputs
 - `projects/<name>/data_model.md` (grain, tables, relationships, date table, diagram).

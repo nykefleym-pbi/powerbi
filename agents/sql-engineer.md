@@ -23,6 +23,8 @@ grain the Data Architect specified — pushing heavy lifting to the warehouse.
 ## Inputs
 - `data_model.md` (table contracts, grain), `shared/coding_standards.md` (SQL section),
   `shared/naming_conventions.md`, `shared/performance_guidelines.md`.
+- **Knowledge references:** `knowledge/performance.md` (fold-friendly, source-side reduction) and
+  `knowledge/fabric.md` (Lakehouse vs Warehouse; pushing transforms upstream).
 
 ## Outputs
 - `projects/<name>/sql/*.sql` (views/procs), each with a header comment.

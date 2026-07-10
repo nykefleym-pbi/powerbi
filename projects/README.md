@@ -6,7 +6,8 @@ One folder per dashboard project lives here, created by the Orchestrator at kick
 At kickoff the Orchestrator:
 1. Copies `shared/project_state.md`, `shared/decision_log.md`, and `shared/assumptions.md` into
    the project folder (these become the project's living documents).
-2. Scaffolds artifacts from `templates/` as each stage needs them.
+2. Scaffolds artifacts from `templates/` as each stage needs them (including `tech_decision.md`
+   at the wireframe gate, and a `custom_visual_brief.md` per non-native element it assigns).
 
 ## Typical project layout
 
@@ -25,9 +26,13 @@ projects/<name>/
 ├── measure_dictionary.md
 ├── data_dictionary.md
 ├── wireframe.md            # Visualization (approved before build)
-├── report/                 # Visualization (build notes)
+├── tech_decision.md        # Orchestrator (technology per element, before build)
+├── custom_visual_brief.md  # per non-native element → visual sub-specialist
+├── report/                 # Visualization + visual sub-specialists (Deneb/SVG/HTML/Synoptic)
+│   └── assets/             # synoptic images/area maps, exported SVG, etc.
 ├── theme.json
 ├── performance_report.md   # Performance Optimizer
+├── accessibility_audit.md  # Accessibility Specialist (feeds QA)
 ├── qa_report.md            # QA Validator
 ├── portfolio_review.md     # Portfolio Reviewer
 ├── critique.md             # Dashboard Critic

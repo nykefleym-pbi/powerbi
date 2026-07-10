@@ -31,6 +31,26 @@ Analyst     Architect   Power Query            Engineer  & UX          Optimizer
                        Validator  Reviewer      Critic
 ```
 
+**Visual sub-specialists** hang off Visualization at build time (Stage 7), assigned by the
+Orchestrator's `tech_decision.md` — they never choose *what* to build, only implement their slice:
+
+```
+        Visualization (owns wireframe/layout/theme/story)
+                 │  the Orchestrator routes each element per tech_decision.md
+   ┌─────────────┼───────────────┬────────────────┬──────────────────┐
+   ▼             ▼               ▼                ▼                  ▼
+deneb-        svg-figma-      html-visual-     synoptic-panel-   (native + theme
+specialist    designer        specialist       specialist        stay with Visualization)
+```
+
+**On-demand advisors & the curator** (not linear stages):
+
+```
+  fabric-engineer ── advises ─► Data Architect / DAX / Power Query / Documentation (via Orchestrator)
+  accessibility-specialist ── audits report ─► feeds QA (QA owns the pass/fail gate)
+  knowledge-curator ── maintains knowledge/ + recommends updates ─► OUTSIDE all project builds
+```
+
 ## What flows along each spoke
 
 | Producer → Orchestrator → Consumer | What's handed over |
@@ -41,6 +61,10 @@ Analyst     Architect   Power Query            Engineer  & UX          Optimizer
 | Power Query → DAX | final table/column names + types |
 | DAX → Visualization | available measures + folders |
 | Visualization → (Critic, then build) | wireframe for challenge/approval |
+| Orchestrator → visual sub-specialists | `tech_decision.md` element + `custom_visual_brief.md` |
+| visual sub-specialists → Visualization | built custom visual + inputs used + limits |
+| fabric-engineer → Architect/DAX/PQ/Docs | storage-mode / deployment / Fabric guidance |
+| accessibility-specialist → QA | `accessibility_audit.md` (findings + owners) |
 | Everyone → QA | the built solution to validate |
 | Everyone → Documentation | artifacts + dictionaries to publish |
 | Performance / QA / Critic → owners | routed fixes, defects, challenges |
@@ -67,7 +91,11 @@ Every return is a **3–5 line handoff summary** the Orchestrator prepends to `p
 | `powerquery/*`, transformation notes | Power Query Engineer |
 | `measures/*`, `measure_dictionary.md` | DAX Engineer |
 | `wireframe.md`, `report/*`, `theme.json` | Visualization |
-| `performance_report.md` | Performance Optimizer |
+| `tech_decision.md` | Orchestrator (via `select-visual-tech`) |
+| Deneb specs, SVG/HTML/Synoptic assets in `report/*` | the assigned visual sub-specialist |
+| `performance_report.md`, Fabric/deployment note in `architecture.md` | Performance / Fabric engineer |
+| `accessibility_audit.md` | Accessibility specialist (feeds QA) |
+| `knowledge/*` | Knowledge Curator (recommends `shared/`+agent changes; never edits them directly) |
 | `qa_report.md` | QA Validator |
 | README + guides (published docs) | Documentation |
 | `portfolio_review.md` | Portfolio Reviewer |

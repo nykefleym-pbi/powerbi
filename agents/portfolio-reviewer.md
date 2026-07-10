@@ -22,7 +22,9 @@ Holistic evaluation and scoring; recommendations. Portfolio/market lens.
 
 ## Inputs
 - The full solution + all documentation, `qa_report.md`, `performance_report.md`,
-  `decision_log.md`, `assumptions.md`.
+  `decision_log.md`, `assumptions.md`, `tech_decision.md` (were technology choices deliberate?).
+- **Knowledge references:** `knowledge/report-storytelling.md` (interview-winning polish) and
+  `knowledge/ux.md`.
 
 ## Outputs
 - `projects/<name>/portfolio_review.md`: scorecard + prioritized recommendations + interview-readiness notes.

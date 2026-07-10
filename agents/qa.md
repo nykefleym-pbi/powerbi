@@ -24,6 +24,9 @@ Verification and validation across data, model, measures, report, accessibility,
 ## Inputs
 - The built solution, `requirements.md` (acceptance criteria), `business_rules.md`, all `shared/`
   standards, the approved `wireframe.md`, `templates/qa_checklist.md`, prior `performance_report.md`.
+- `tech_decision.md` (verify the build uses the assigned technologies), and the
+  `accessibility_audit.md` from the Accessibility specialist (folds into the QA gate).
+- **Knowledge references:** `knowledge/accessibility.md` (WCAG 2.2 AA checks, custom-visual a11y).
 
 ## Outputs
 - `projects/<name>/qa_report.md` (checklist result + defect list with severity + owner).

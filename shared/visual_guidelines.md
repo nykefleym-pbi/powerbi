@@ -3,6 +3,10 @@
 > **Owner:** Visualization & UX Designer · **Readers:** Visualization, Dashboard Critic, QA
 > Tokens (color/type/spacing) live in `design_system.md`. This file is about *choosing and
 > building the right visuals*.
+> **Deep reference:** `knowledge/ux.md` (modern UX & interaction design),
+> `knowledge/report-storytelling.md` (narrative, executive dashboards, portfolio), and
+> `knowledge/accessibility.md`. **Choosing a non-native technology** (Deneb / SVG / HTML /
+> Synoptic) is governed by `shared/tech_selection.md`.
 
 ## Chart selection heuristic
 

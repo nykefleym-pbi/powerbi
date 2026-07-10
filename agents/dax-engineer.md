@@ -25,6 +25,9 @@ and dynamic formatting that correctly implement the business rules and answer th
 - `measure_specification` needs from requirements, `business_rules.md`, model table/column names from
   Power Query, `shared/dax_guidelines.md`, `shared/naming_conventions.md`,
   `shared/performance_guidelines.md`, `templates/measure_specification.md`.
+- **Knowledge references (SQLBI-aligned):** `knowledge/sqlbi-patterns.md` (evaluation/filter
+  context, CALCULATE, variables, TREATAS), `knowledge/dax-best-practices.md` (time intelligence,
+  calculation groups, VertiPaq, naming), `knowledge/performance.md`.
 
 ## Outputs
 - `projects/<name>/measures/` (measure definitions) + `measure_specification.md`.

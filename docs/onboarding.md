@@ -8,9 +8,20 @@ inside Claude Code. Read this once; you'll be productive in ten minutes.
 - **The Orchestrator is the project manager.** You talk to it; it talks to the specialists.
 - **Specialists are narrow experts.** Each owns one slice (SQL, DAX, visuals, …) and a small set
   of files. They don't reach into each other's work.
-- **`shared/` is the team's shared brain.** Standards and durable knowledge live there so agents
-  don't re-derive them and don't carry them in every prompt.
 - **`project_state.md` is the single source of truth** for status and handoffs.
+
+## Three knowledge layers
+
+The team's "brain" is split into three deliberately separate layers:
+
+| Layer | Folder | What it is | Who maintains it |
+|---|---|---|---|
+| **Standards (the law)** | `shared/` | Binding conventions agents must comply with; QA rejects violations | the owning specialist |
+| **Reference (the textbook)** | `knowledge/` | Deep, external-aligned patterns (SQLBI, Microsoft, Deneb, Data Goblins) agents learn from and cite | Knowledge Curator |
+| **Procedures (the how-to)** | `.claude/skills/` | Reusable step-by-step recipes, invocable as `/name` (e.g. `/deneb-visual`, `/select-visual-tech`) | whoever owns the procedure |
+
+Knowledge and skills **reference** `shared/` — they never restate or override a binding rule.
+This separation is what lets us add capability without bloating agents or breaking standards.
 
 ## The two-file pattern (important)
 
@@ -39,8 +50,28 @@ not *carried*.
 You don't always need the whole pipeline:
 > *Use the dax-engineer agent to add a rolling-12-month revenue measure to the retail project.*
 
-The specialist reads its charter + the relevant `shared/` files, does the work, and returns a
-short handoff summary.
+The specialist reads its charter + the relevant `shared/`/`knowledge/` files, does the work, and
+returns a short handoff summary.
+
+## The extended team (added specialists)
+
+Beyond the core 12, the team now includes:
+- **Visual sub-specialists** built at Stage 7 when the Orchestrator's `tech_decision.md` picks a
+  non-native technology: **deneb-specialist** (Deneb/Vega-Lite), **svg-figma-designer** (dynamic
+  SVG + Figma design system), **html-visual-specialist** (HTML Content cards), and
+  **synoptic-panel-specialist** (image maps). Visualization still owns layout, theme, and story.
+- **fabric-engineer** — on-demand advisor for Fabric, semantic-model storage modes (Import /
+  Direct Lake / DirectQuery), deployment pipelines, and governance.
+- **accessibility-specialist** — on-demand WCAG 2.2 AA auditor; its audit feeds QA.
+- **knowledge-curator** — keeps `knowledge/` current against Microsoft/SQLBI/Deneb/Data Goblins;
+  works outside project builds and only *recommends* changes to standards/agents.
+
+## Choosing a visual technology
+
+The Orchestrator decides *native vs. Deneb vs. SVG vs. HTML vs. Synoptic vs. calc groups* at the
+wireframe gate (Stage 6) via the `/select-visual-tech` skill and records the reasoning in
+`tech_decision.md`. Default is **native-first**; every custom choice is justified. See
+[../shared/tech_selection.md](../shared/tech_selection.md).
 
 ## Working with a live Power BI model (optional)
 
@@ -61,3 +92,5 @@ Desktop / Tabular Editor. Either way, the written specs in `projects/<name>/` ar
 - Who talks to whom: [agent-interaction.md](agent-interaction.md)
 - Add/adjust an agent: [../CONTRIBUTING.md](../CONTRIBUTING.md)
 - Standards: everything in [../shared/](../shared/)
+- Reference library: [../knowledge/](../knowledge/) — start with [../knowledge/README.md](../knowledge/README.md)
+- Procedures (skills): [../.claude/skills/](../.claude/skills/)

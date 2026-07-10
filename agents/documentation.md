@@ -24,6 +24,8 @@ All human-readable documentation for the project.
 - All prior artifacts: `requirements.md`, `data_model.md`, `architecture.md`, data/measure
   dictionaries, `qa_report.md`, `performance_report.md`, wireframe, decision log, assumptions.
 - `templates/portfolio_readme.md`, `templates/architecture.md`, `shared/design_system.md` (for consistent visuals).
+- **Knowledge references:** `knowledge/report-storytelling.md` (impact-first, portfolio framing)
+  and `knowledge/fabric.md` (for the "how this scales in Fabric" section from the Fabric engineer).
 
 ## Outputs
 - `projects/<name>/README.md` (portfolio), `architecture.md`, published `data_dictionary.md` and

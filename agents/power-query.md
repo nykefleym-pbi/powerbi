@@ -25,6 +25,8 @@ table at the correct grain with correct types, while preserving query folding.
 - `data_model.md` (target tables/grain), SQL Engineer's view names/keys,
   `shared/powerquery_guidelines.md`, `shared/naming_conventions.md`,
   `shared/coding_standards.md`, `shared/performance_guidelines.md`.
+- **Knowledge references:** `knowledge/performance.md` (folding, refresh) and `knowledge/fabric.md`
+  (Dataflows Gen2, when to push transforms upstream, incremental refresh).
 
 ## Outputs
 - `projects/<name>/powerquery/*.m` (or `.pq`) query definitions, grouped and commented.

@@ -1,9 +1,10 @@
-# Power BI Dashboard Development Team
+# Power BI Center of Excellence
 
-A **multi-agent system** for Claude Code that emulates a real Business Intelligence
-consulting team. An **Orchestrator** decomposes work and coordinates 11 specialist
-agents to build **portfolio-quality Power BI dashboards** from scratch — following
-enterprise BI best practices end to end.
+A **multi-agent system** for Claude Code that emulates a Business Intelligence
+**Center of Excellence**. An **Orchestrator** decomposes work and coordinates **18 specialist
+agents** — plus a reusable **knowledge library** and invocable **skills** — to build
+**portfolio-quality Power BI dashboards** from scratch, following enterprise BI best practices
+aligned with Microsoft, SQLBI, Deneb, and Data Goblins guidance.
 
 > Built for a personal portfolio. Every project produced with this system is designed
 > to be interview-ready: strong business framing, a clean star schema, disciplined DAX,
@@ -27,7 +28,21 @@ Project Orchestrator
 ├── Documentation Writer     README, data dictionary, guides
 ├── Portfolio Reviewer       scores the work like a hiring manager
 └── Dashboard Critic         adversarial reviewer — challenges every decision
+
+Extended team (added specialists)
+├── Deneb Specialist         custom Vega-Lite visuals (bullet, dumbbell, small multiples)
+├── SVG & Figma Designer     dynamic SVG measures + Figma design system → theme.json
+├── HTML Visual Specialist   HTML Content cards, progress bars, embedded SVG
+├── Synoptic Panel Specialist image maps (floor/process/org/non-standard geo)
+├── Microsoft Fabric Engineer storage mode, Direct Lake, deployment pipelines, governance
+├── Accessibility Specialist  WCAG 2.2 AA audits (incl. custom visuals) → feeds QA
+└── Knowledge Curator         keeps knowledge/ current; recommends (never edits) standards
 ```
+
+The four visual specialists are **implementation sub-specialists** invoked at build time when the
+Orchestrator's technology decision selects their technology; Visualization keeps ownership of
+layout, theme, and story. Fabric & Accessibility are **on-demand advisors**; the Curator works
+**outside** project builds.
 
 **The Orchestrator never does specialist work itself.** It understands goals,
 decomposes work, assigns tasks, reviews outputs, resolves conflicts, maintains
@@ -42,13 +57,21 @@ project state, and decides when work is complete.
 ├── README.md                 you are here
 ├── CONTRIBUTING.md           how to extend the system
 ├── .claude/
-│   └── agents/               Claude Code sub-agent definitions (the runnable team)
+│   ├── agents/               Claude Code sub-agent definitions (the runnable team)
+│   └── skills/               invocable step-by-step procedures (/deneb-visual, /select-visual-tech, …)
 ├── agents/                   full agent charters (the source of truth for each role)
-├── shared/                   project-wide knowledge every agent reads before working
+├── shared/                   binding standards every agent complies with (the "law")
+├── knowledge/                reusable reference library (the "textbook": SQLBI/MS/Deneb/Data Goblins)
 ├── templates/                reusable document templates
 ├── projects/                 one folder per dashboard project (created per engagement)
 └── docs/                     onboarding, lifecycle, interaction diagram
 ```
+
+### Three knowledge layers
+
+- **`shared/`** — binding standards (QA-enforced). **`knowledge/`** — deep reference agents cite.
+  **`.claude/skills/`** — reusable procedures invocable as `/name`. Knowledge and skills reference
+  `shared/`; they never override it. See [docs/onboarding.md](docs/onboarding.md).
 
 ### Two files per agent — on purpose
 
@@ -92,8 +115,10 @@ YoY measure"*), but for full projects let the Orchestrator drive.
                          → 13  Final Orchestrator Review
 ```
 
-Each stage finishes and is reviewed before the next begins, unless the Orchestrator
-determines two stages are safe to run in parallel (see
+Stage 6 also produces a **technology decision** (native vs. Deneb vs. SVG vs. HTML vs. Synoptic vs.
+calc groups) via the `/select-visual-tech` skill before any build — recorded, native-first, and
+justified per element in `tech_decision.md`. Each stage finishes and is reviewed before the next
+begins, unless the Orchestrator determines two stages are safe to run in parallel (see
 [docs/project-lifecycle.md](docs/project-lifecycle.md)).
 
 ---
@@ -103,9 +128,13 @@ determines two stages are safe to run in parallel (see
 - **Minimal context rot** — lean sub-agents, knowledge in shared files, summaries over transcripts.
 - **Clear separation of responsibilities** — each agent owns a narrow slice and a small set of files.
 - **Reusable & modular** — add a new specialist by dropping in two files; nothing else changes.
-- **Single source of truth** — `shared/` holds durable knowledge; the Orchestrator owns `project_state.md`.
+- **Three-layer knowledge** — `shared/` (law) · `knowledge/` (textbook) · `.claude/skills/` (how-to);
+  each concern lives in exactly one place.
+- **Deliberate technology choice** — native-first; every Deneb/SVG/HTML/Synoptic build is justified.
+- **Single source of truth** — the Orchestrator owns `project_state.md`; the Curator keeps `knowledge/` fresh.
 - **Adversarial quality gate** — the Critic exists to make the work better, not to approve it.
-- **Enterprise BI best practices** — star schemas, explicit measures, calculation groups, VertiPaq discipline, accessibility.
+- **Enterprise BI best practices** — star schemas, explicit measures, calculation groups, VertiPaq
+  discipline, WCAG 2.2 AA accessibility, and Fabric-ready semantic models.
 
 ---
 

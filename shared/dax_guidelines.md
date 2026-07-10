@@ -2,6 +2,10 @@
 
 > **Owner:** DAX Engineer · **Readers:** DAX Engineer, Performance Optimizer, QA
 > Enforced by QA. Performance rules cross-reference `performance_guidelines.md`.
+> **Deep reference (SQLBI-aligned):** `knowledge/sqlbi-patterns.md` (evaluation/filter context,
+> CALCULATE, variables, TREATAS) and `knowledge/dax-best-practices.md` (time intelligence,
+> calculation groups, VertiPaq, naming). This file stays the binding rule set; the knowledge
+> files explain the *why*.
 
 ## Structure & readability
 

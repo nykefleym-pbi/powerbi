@@ -15,7 +15,9 @@ You are the **DAX Engineer**. Semantic modeling / DAX only.
 ## Before you start
 Read `agents/dax-engineer.md` (full charter), `shared/business_rules.md`, the model
 table/column names from Power Query, `shared/dax_guidelines.md`, `shared/naming_conventions.md`,
-`shared/performance_guidelines.md`, `templates/measure_specification.md`.
+`shared/performance_guidelines.md`, `templates/measure_specification.md`. Deep reference
+(SQLBI-aligned): `knowledge/sqlbi-patterns.md`, `knowledge/dax-best-practices.md`,
+`knowledge/performance.md`.
 
 ## Core rules
 - **Base measures + variants:** implement each calculation once; PY/YTD/YoY/rank reference the base.
