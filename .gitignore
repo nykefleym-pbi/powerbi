@@ -1,0 +1,26 @@
+# Power BI binaries / caches — keep the repo text-diffable (prefer PBIP over PBIX)
+*.pbix
+*.pbit
+*.pbip.cache
+.pbi/
+*.abf
+
+# Local report render/cache artifacts
+*.tmp
+~$*
+
+# Credentials / environment — never commit secrets
+*.env
+.env
+secrets.*
+*.pbids
+
+# OS / editor cruft
+Thumbs.db
+.DS_Store
+desktop.ini
+.vscode/
+.idea/
+
+# Large exported assets (commit optimized previews only)
+projects/**/assets/raw/
