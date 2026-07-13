@@ -1,0 +1,10 @@
+president_name,short_name,term_start_date,term_end_date,term_ordinal,is_current_term,is_right_censored,band_color_token
+Ferdinand E. Marcos (Sr.),Marcos Sr.,1965-12-30,1986-02-25,1,false,false,
+Corazon C. Aquino,Aquino,1986-02-25,1992-06-30,2,false,false,
+Fidel V. Ramos,Ramos,1992-06-30,1998-06-30,3,false,false,
+Joseph E. Estrada,Estrada,1998-06-30,2001-01-20,4,false,false,
+Gloria Macapagal-Arroyo,Arroyo,2001-01-20,2010-06-30,5,false,false,
+Benigno S. Aquino III,Aquino III,2010-06-30,2016-06-30,6,false,false,
+Rodrigo R. Duterte,Duterte,2016-06-30,2022-06-30,7,false,false,
+Ferdinand R. Marcos Jr.,Marcos Jr.,2022-06-30,2026-12-31,8,true,true,
+Unknown,Unknown,,,0,false,false,

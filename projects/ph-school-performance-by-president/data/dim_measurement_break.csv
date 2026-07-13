@@ -1,0 +1,6 @@
+break_name,break_type,event_date,affected_scope,severity,description
+No break,None,,(none),None,Row 0 - observation does not sit on/after any measurement break.
+K-12 Senior High rollout (2016),Reform,2016-06-01,K2 Secondary; K3,High,"Senior High (Grades 11-12) phased 2012-2016; the secondary-enrolment step-change is reform-driven, not organic growth (A-009)."
+NAT scale change (2016),MeasurementChange,2016-01-01,K5_G6; K5_G10; K5_G12,High,"NAT scale/methodology change ~2015-2016; MPS not comparable across the break (e.g., Grade 6 70.88 in 2015 to 42.03 in 2016) (A-004)."
+COVID-19 shock (2020),GlobalShock,2020-03-01,K7; K8; basic-ed enrolment,High,Pandemic school closures and labour disruption distort 2020-2021 figures independent of any administration (A-010).
+PISA debut (2018),SeriesDebut,2018-10-01,K6_MATH; K6_READ; K6_SCI,Medium,"Philippines first sat PISA in 2018; only 2018 and 2022 exist - discrete anchors, never interpolated (A-003)."

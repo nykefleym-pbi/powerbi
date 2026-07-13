@@ -1,0 +1,14 @@
+metric_code,metric_name,metric_family,unit_of_measure,frequency,definition_basis,is_proxy,is_comparable_across_years,higher_is_better,default_aggregation,sort_order
+K1,"Pupil-Teacher Ratio (Basic Ed, UIS/WB)",Resourcing,Ratio,Annual school-year,Enrolment / teaching-staff headcount (UNESCO UIS via World Bank),false,true,false,None,1
+K1b,"Pupil-Teacher Ratio (DepEd, positions basis)",Resourcing,Ratio,Annual school-year,"Enrolment / authorized nationally-paid teaching positions (DepEd, DO 77 s.2010)",false,true,false,None,2
+K2,Basic Education Enrolment,Resourcing,Count,Annual school-year,Total learners enrolled by level,false,true,,None,3
+K3,Cohort Survival / Completion Rate (Basic Ed),Pipeline,Percent,Annual school-year,"Primary completion rate (gross), World Bank SE.PRM.CMPT.ZS, as real proxy for cohort survival",false,true,true,None,4
+K4,Higher-Education Graduates,Pipeline,Count,Annual academic-year,"Count of HEI graduates, national (CHED HEMIS)",false,true,true,None,5
+K5_G6,"Student Achievement - NAT MPS, Grade 6",Learning,Score,Annual school-year,"DepEd National Achievement Test Mean Percentage Score, Grade 6",false,false,true,None,6
+K5_G10,"Student Achievement - NAT MPS, Grade 10",Learning,Score,Annual school-year,"DepEd National Achievement Test Mean Percentage Score, Grade 10",false,false,true,None,7
+K5_G12,"Student Achievement - NAT MPS, Grade 12",Learning,Score,Annual school-year,"DepEd National Achievement Test Mean Percentage Score, Grade 12 (no sourced values in v1)",false,false,true,None,8
+K6_MATH,Student Achievement - PISA Mathematics,Learning,Score,PISA cycle,"OECD PISA mean score, mathematics",false,true,true,None,9
+K6_READ,Student Achievement - PISA Reading,Learning,Score,PISA cycle,"OECD PISA mean score, reading",false,true,true,None,10
+K6_SCI,Student Achievement - PISA Science,Learning,Score,PISA cycle,"OECD PISA mean score, science",false,true,true,None,11
+K7,Youth Unemployment Rate (15-24),Outcomes,Percent,LFS-WB annual,Unemployment rate ages 15-24 (ILO-modeled via WB SL.UEM.1524.ZS); PROXY for post-graduation joblessness,true,true,false,None,12
+K8,College-Educated Share of the Unemployed,Outcomes,Percent,LFS-WB annual,"Unemployment with advanced education, % of total unemployed (WB SL.UEM.ADVN.ZS); PROXY, a share not a rate",true,true,,None,13

@@ -1,0 +1,7 @@
+level_name,level_group,level_order,is_post_k12_only
+National,N/A,0,false
+Elementary,Basic Ed,1,false
+Junior High,Basic Ed,2,false
+Senior High,Basic Ed,3,true
+Secondary,Basic Ed,4,false
+Higher Education,Higher Ed,5,false

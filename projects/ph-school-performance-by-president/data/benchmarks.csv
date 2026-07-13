@@ -1,0 +1,6 @@
+benchmark_name,applies_to_metric_code,applies_to_level,value,note
+DepEd standard PTR (primary),K1,Elementary,25,DepEd 25:1 primary class-size/pupil-teacher standard (DO 77 s.2010) reference line.
+DepEd standard PTR (secondary),K1,Secondary,45,DepEd 45:1 secondary standard reference line.
+OECD average - Mathematics,K6_MATH,National,472,"OECD PISA 2022 average, mathematics."
+OECD average - Reading,K6_READ,National,476,"OECD PISA 2022 average, reading."
+OECD average - Science,K6_SCI,National,485,"OECD PISA 2022 average, science."
