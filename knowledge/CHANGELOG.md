@@ -19,6 +19,31 @@ agents are logged here but only applied by their owners — the Curator never ed
 
 ---
 
+## 2026-07-11 — `/refresh-knowledge` pass (Microsoft / SQLBI / Deneb)
+First live curator refresh (WebSearch/WebFetch now available). Validated the 2026-07-10 baseline
+against upstream; three files had material upstream changes, two got note+date bumps.
+
+- **dax-best-practices.md**: added **"User-defined functions (UDFs) — the code-reuse tool"** and
+  **"Visual calculation functions"** sections; reframed calc groups as a *user-selectable
+  filter/transform*, **not** a code-reuse mechanism (that's now a UDF); added a checklist line.
+  (source: SQLBI — [UDFs vs. calculation groups](https://www.sqlbi.com/articles/dax-user-defined-functions-udf-vs-calculation-groups/); MS Learn visual calculations)
+- **fabric.md**: split Direct Lake into **two variants** — Direct Lake *on OneLake* (multi-source,
+  no DQ fallback, composite with Import tables, OneLake-file RLS) vs. *on SQL endpoint* (single
+  source, DQ fallback, honors SQL RLS/OLS/CLS); added deployment-pipeline **rebind gotcha**
+  (rules supported on SQL, not natively on OneLake → parameterize the OneLake URI).
+  (source: MS Learn — [Direct Lake overview](https://learn.microsoft.com/en-us/fabric/fundamentals/direct-lake-overview))
+- **deneb.md**: added **"Version note"** — Deneb 1.9.x bundles Vega-Lite 5.x; 5.21+ validation can
+  make previously-working (warning-only) specs fail to render. (source: Deneb docs, Vega-Lite docs)
+- **vega-lite.md**: added matching **validation gotcha** (5.21+ warnings → render failures); date bump.
+- Footers refreshed to **2026-07-11** on the four files above.
+
+Recommended (Curator advises; owners apply — not edited here):
+- **Recommended:** `shared/dax_guidelines.md` + `dax-engineer` agent — adopt UDFs as the standard
+  code-reuse mechanism and stop steering calc groups toward reuse → status: proposed
+- **Recommended:** `fabric-engineer` + `data-architect` agents — when recommending Direct Lake,
+  require choosing the variant (OneLake vs SQL endpoint) and note the deployment rebind constraint
+  → status: proposed
+
 ## 2026-07-10 — Baseline (library created)
 - Established the 13-file knowledge library (see [README.md](README.md)) aligned to Microsoft Learn,
   SQLBI, Deneb docs, and Data Goblins. All files stamped "Last reviewed: 2026-07-10."

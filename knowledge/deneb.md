@@ -41,6 +41,13 @@
   responsive behavior, theme binding, and known limitations (e.g., no native cross-highlight).
 - Store under the project `report/` folder; log the technology choice in `tech_decision.md`.
 
+## Version note
+
+- Current Deneb is the **1.9.x** line (AppSource), bundling **Vega-Lite 5.x**. Vega-Lite **5.21+**
+  tightened validation: specs that emit **warnings** can now fail to render. If a previously working
+  spec breaks after an update, **resolve warnings first** before filing a bug. Pin the intended
+  Deneb/provider version in the handoff note.
+
 ## Pitfalls
 
 - Overusing Deneb where native works → maintenance debt. Justify every Deneb visual in the
@@ -52,4 +59,4 @@
 
 ---
 *Sources: Deneb documentation (deneb-viz), Data Goblins (Deneb tutorials), Vega-Lite docs.
-Last reviewed: 2026-07-10.*
+Last reviewed: 2026-07-11.*

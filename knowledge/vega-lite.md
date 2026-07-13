@@ -59,6 +59,9 @@ You describe *what* to draw (a grammar), not *how* to draw it (imperative code).
 - Aggregation happens per encoding `aggregate` **or** via transform — don't double-aggregate.
 - Sort with `"sort": "-y"` (by value) not alphabetical unless natural order.
 - Large datasets: pre-aggregate in DAX; Vega-Lite is not a data warehouse.
+- **Validation (5.21+):** Vega-Lite tightened schema validation — a spec that only emitted
+  *warnings* before can now **fail to render** in current Deneb (1.9.x / Vega-Lite 5.x). Validate
+  against the bundled schema and clear warnings before shipping; see [deneb.md](deneb.md).
 
 ---
-*Sources: Vega-Lite documentation, Deneb docs. Last reviewed: 2026-07-10.*
+*Sources: Vega-Lite documentation, Deneb docs. Last reviewed: 2026-07-11.*

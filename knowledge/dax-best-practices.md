@@ -15,7 +15,9 @@
 
 ## Calculation groups (collapse measure sprawl)
 
-- Use once you have **3+ time variants across 3+ base measures** (Current/PY/YoY/YTD × Sales/Cost/Margin).
+- Use for a **user-selectable** filter/transform across all measures (period selection, scaling) —
+  not as a code-reuse mechanism (that's a UDF, below). Justified once you have **3+ time variants
+  across 3+ base measures** (Current/PY/YoY/YTD × Sales/Cost/Margin).
 - Anatomy: a calc-group table (`CG Time Intelligence`), calculation items each wrapping
   `SELECTEDMEASURE()`, and a **precedence** number when multiple groups combine.
 - **Dynamic format strings** per item (e.g., YoY % item forces `0.0%`).
@@ -29,6 +31,31 @@ VAR Cur = SELECTEDMEASURE ()
 VAR Py  = CALCULATE ( SELECTEDMEASURE (), SAMEPERIODLASTYEAR ( DimDate[Date] ) )
 RETURN DIVIDE ( Cur - Py, Py )
 ```
+
+## User-defined functions (UDFs) — the code-reuse tool
+
+DAX **UDFs** are reusable, **parameterized** logic that behaves like a native function — callable
+from measures, calculated columns, security roles, and calc items. They are **developer
+infrastructure, invisible to report users**. SQLBI's 2026 guidance resets the old habit of using
+calc groups for code reuse:
+
+- **Three tools, three jobs:** *Measures* expose calculations to users · *calculation groups*
+  apply a common filter/transform (period, scaling) that a user **selects** across all measures ·
+  **UDFs** share business logic between developers.
+- **Don't use calc groups for reuse** — they have no parameters, so they must pass information
+  through filter context (overhead + indirection). Prefer a UDF with explicit parameters.
+- **When to wrap in a UDF:** logic is complex, appears in several places, or takes varying
+  parameters (e.g. define "new customer" once). **Don't** wrap a trivial `SUM`/subtraction — it
+  only hides the calc and hurts readability.
+- **Combine:** keep core computations in UDFs; let calc items apply high-level patterns on top.
+  Name/document functions clearly and test performance.
+
+## Visual calculation functions
+
+For visual-layer running/relative math, prefer **visual calculations** (evaluated in the visual's
+result grid): `RUNNINGSUM`, `MOVINGAVERAGE`, `PREVIOUS`/`NEXT`, `FIRST`/`LAST`, and
+`EXPAND`/`COLLAPSE` (navigate hierarchy detail). They avoid extra model measures for
+row-relative calculations that only matter inside one visual.
 
 ## VertiPaq-aware modeling
 
@@ -53,10 +80,13 @@ Follow [`shared/naming_conventions.md`](../shared/naming_conventions.md). SQLBI-
 - [ ] Every measure is explicit; no implicit column drags.
 - [ ] `DIVIDE` everywhere; blank handling deliberate.
 - [ ] Base/variant pattern; no copy-pasted time-intel.
+- [ ] Calc group used for user-selectable variants; **UDF** used for shared/parameterized logic.
 - [ ] Calc group used when the variant matrix justifies it; format strings set.
 - [ ] Variables named for intent; no repeated sub-expressions.
 - [ ] No `FILTER` over whole large tables; `TREATAS` for virtual relationships.
 
 ---
-*Sources: SQLBI (time intelligence, calculation groups, VertiPaq, DAX patterns);
-Microsoft Learn (calculation groups, mark-as-date-table). Last reviewed: 2026-07-10.*
+*Sources: SQLBI — [UDFs vs. calculation groups](https://www.sqlbi.com/articles/dax-user-defined-functions-udf-vs-calculation-groups/),
+time intelligence, calculation groups, VertiPaq, DAX patterns (aligned to The Definitive Guide to
+DAX, 3rd ed., 2026); Microsoft Learn (calculation groups, visual calculations, mark-as-date-table).
+Last reviewed: 2026-07-11.*
